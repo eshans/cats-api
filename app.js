@@ -50,7 +50,7 @@ async function getRandomCats() {
 randomCatPhoto = (json) => {
 	let photo = json[0].url;
 	section.classList.add('cats');
-
+	//Create cat image
 	let image = document.createElement('img');
 	image.src = photo;
 	image.classList.add('random_cats');
@@ -62,6 +62,7 @@ button.addEventListener('click', getRandomCats);
 
 // get data into select
 const catSelect = document.getElementById('select');
+console.log(catSelect);
 
 const getCat = async () => {
 	const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -71,3 +72,17 @@ const getCat = async () => {
 };
 
 getCat();
+
+// Init App
+function init() {
+	switch (global.currentPage) {
+		case '/':
+		case '/index.html':
+			break;
+		case '/search.html':
+			getRandomCats();
+			break;
+	}
+}
+
+document.addEventListener('DOMContentLoaded', init);
