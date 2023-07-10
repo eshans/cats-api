@@ -59,3 +59,15 @@ randomCatPhoto = (json) => {
 };
 
 button.addEventListener('click', getRandomCats);
+
+// get data into select
+const catSelect = document.getElementById('select');
+
+const getCat = async () => {
+	const response = await fetch('https://jsonplaceholder.typicode.com/users');
+	const data = await response.json();
+	console.log(data);
+	return data;
+};
+
+getCat();

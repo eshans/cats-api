@@ -3,22 +3,13 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(100deg, red, blue);
 }
 
 h1,
 h2,
 h3 {
 	text-align: center;
-}
-
-h1,
-h2 {
-	color: #eed6d3;
-	margin: 0;
-}
-
-body {
-	background-color: lightblue;
 }
 
 .header-content {
@@ -105,4 +96,42 @@ body {
 .btn:active:before,
 .btn:active:after {
 	transform: translate3d(0, 0, -1em);
+}
+
+select {
+	/* Reset */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: 0;
+	outline: 0;
+	font: inherit;
+	/* Personalize */
+	width: 20em;
+	height: 3em;
+	padding: 0 4em 0 1em;
+	background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+			no-repeat right 0.8em center/1.4em,
+		linear-gradient(
+			to left,
+			rgba(255, 255, 255, 0.3) 3em,
+			rgba(255, 255, 255, 0.2) 3em
+		);
+	color: white;
+	border-radius: 0.25em;
+	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	/* <option> colors */
+	/* Remove focus outline */
+	/* Remove IE arrow */
+}
+select option {
+	color: inherit;
+	background-color: #320a28;
+}
+select:focus {
+	outline: none;
+}
+select::-ms-expand {
+	display: none;
 }
